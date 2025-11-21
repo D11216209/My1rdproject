@@ -7,6 +7,10 @@ import unittest
 from safe_division import safe_division
 
 
+# 常數定義
+ERROR_MESSAGE_DIVISION_BY_ZERO = "錯誤：除數不能為零"
+
+
 class TestSafeDivision(unittest.TestCase):
     """測試 safe_division 函式的各種情況"""
     
@@ -24,9 +28,9 @@ class TestSafeDivision(unittest.TestCase):
     
     def test_division_by_zero(self):
         """測試除以零的情況（應返回錯誤訊息）"""
-        self.assertEqual(safe_division(10, 0), "錯誤：除數不能為零")
-        self.assertEqual(safe_division(0, 0), "錯誤：除數不能為零")
-        self.assertEqual(safe_division(-5, 0), "錯誤：除數不能為零")
+        self.assertEqual(safe_division(10, 0), ERROR_MESSAGE_DIVISION_BY_ZERO)
+        self.assertEqual(safe_division(0, 0), ERROR_MESSAGE_DIVISION_BY_ZERO)
+        self.assertEqual(safe_division(-5, 0), ERROR_MESSAGE_DIVISION_BY_ZERO)
     
     def test_zero_as_numerator(self):
         """測試零作為被除數的情況"""
