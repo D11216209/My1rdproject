@@ -26,4 +26,6 @@ def guess_number_game():
                 break
         except ValueError:
             print("請輸入一個有效的數字或'q'退出遊戲。")
-guess_number_game()
+
+if __name__ == '__main__':
+    guess_number_game()
